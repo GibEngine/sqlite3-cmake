@@ -20,7 +20,7 @@ add_definitions(-DSQLITE_ENABLE_STAT4)
 
 if(WIN32)
   add_custom_command(TARGET sqlite POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:sqlite> ${CMAKE_BINARY_DIR}/sqlite3.exe
+    COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:sqlite> ${CMAKE_CURRENT_BINARY_DIR}/sqlite3.exe
     DEPENDS sqlite
   )
   install(FILES sqlite3.exe DESTINATION bin)
